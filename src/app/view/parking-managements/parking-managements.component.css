@@ -1,0 +1,8 @@
+.active-link {
+ border-bottom: 2px solid #e7d9d9;
+}
+
+.btn {
+  outline: none !important;
+  box-shadow: none !important;
+}

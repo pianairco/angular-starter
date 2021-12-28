@@ -1,0 +1,95 @@
+<mat-sidenav-container>
+  <mat-sidenav #appDrawer mode="rail" opened="true" (openedChange)="openedChange(appDrawer.opened)">
+    <mat-nav-list class="dashboard">
+      <a mat-list-item>
+        <mat-icon mat-list-icon >account_circle</mat-icon>
+        <p matLine>نام کاربری</p>
+      </a>
+
+      <mat-divider></mat-divider>
+
+      <a mat-list-item routerLink="parking-managements/alert-management">
+        <mat-icon mat-list-icon>inbox</mat-icon>
+        <p matLine> پارکینگ هوشمند</p>
+      </a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>star</mat-icon>
+        <p matLine> حضور و غیاب</p>
+      </a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>drafts</mat-icon>
+        <p matLine >مدیریت هشدار</p>
+      </a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>drafts</mat-icon>
+        <p matLine >کنترل دسترسی هوشمند</p>
+      </a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>drafts</mat-icon>
+        <p matLine > تجهیزات</p>
+      </a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>drafts</mat-icon>
+        <p matLine >مدیریت سازمان</p>
+      </a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>drafts</mat-icon>
+        <p matLine >نمایشگر و کیوسک</p>
+      </a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>drafts</mat-icon>
+        <p matLine > رستوران</p>
+      </a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>drafts</mat-icon>
+        <p matLine >تماس تصویری</p>
+      </a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>drafts</mat-icon>
+        <p matLine >انرژی هوشمند</p>
+      </a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>drafts</mat-icon>
+        <p matLine > ایمنی هوشمند</p>
+      </a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>drafts</mat-icon>
+        <p matLine > امنیت هوشمند</p>
+      </a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>drafts</mat-icon>
+        <p matLine >گزارشات و ثبت وقایع</p>
+      </a>
+      <a mat-list-item>
+        <mat-icon mat-list-icon>drafts</mat-icon>
+        <p matLine >پنل تنظیمات</p>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="mat-elevation-z1">
+      <button mat-icon-button id="menu" (click)="appDrawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>سامانه IOT</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon mr-6" aria-label="Example icon-button with share icon" style="padding-left: 70px">
+        {{getTime() | date:'HH:mm:ss'}}
+      </button>
+      <button mat-icon-button class="example-icon mr-4" aria-label="Example icon-button with share icon" style="padding-left: 70px">
+        {{getJalaliNowDate()}}
+      </button>
+      <button mat-button class="example-icon ml-4" aria-label="Example icon-button with share icon">
+        خروج
+      </button>
+    </mat-toolbar>
+    <div class="container-fluid" >
+      <div class="row" style="height: 100vh">
+        <div class="col-12 col-sm-12">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

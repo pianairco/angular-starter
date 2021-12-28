@@ -1,0 +1,26 @@
+<!--<mat-tab-group animationDuration="0ms" (selectedTabChange)="changeTab($event)">-->
+<!--  <mat-tab label="مدیریت هشدار" >-->
+<!--  </mat-tab>-->
+
+<!--  <mat-tab label="پیکربندی سناریو">-->
+<!--    -->
+<!--  </mat-tab>-->
+
+<!--  <mat-tab label="زمان بندی تجهیزات">-->
+<!--  </mat-tab>-->
+
+<!--</mat-tab-group>-->
+
+<section>
+  <div class="example-button-row" style="border-bottom: 1px solid #e7d9d9">
+    <button class="btn mt-2 mx-2" [routerLinkActive]="'active-link'" [routerLink]="'alert-management'">مدیریت هشدار</button>
+    <button class="btn mt-2 mx-2" [routerLinkActive]="'active-link'" [routerLink]="'scenario-configuration'">پیکربندی سناریو</button>
+    <button class="btn mt-2 mx-2" [routerLinkActive]="'active-link'" [routerLink]="'equipment-scheduling'">زمان بندی تجهیزات</button>
+  </div>
+</section>
+
+
+<router-outlet></router-outlet>
+
+
+

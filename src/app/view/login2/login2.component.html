@@ -1,0 +1,61 @@
+<div class="home-component container" style="position: center">
+  <div #demoModal class="modal fade" id="exampleModal"
+       [style.display]="showModal ? 'block' : 'none'"
+       [class.show]="showModal"
+       tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" style="alignment: center" >
+      <div class="modal-content p-0" style="border: none; border-radius: 8px;alignment: center;">
+        <div class="container p-0" style="width: 400px;">
+          <div class="row" style="border: solid 1px #cecece; border-radius: 15px; padding: 30px 0px 50px 0px;">
+            <div class="col col-12 p-0 text-center align-self-center">
+              <div class="container p-0">
+                <div class="row " >
+                  <div class="col col-12 text-center pb-3 text-center" style="color: blue; font-weight: bold; font-size: 18px">
+                    <img src="../../../assets/images.png" class="img-fluid" style="width: 100px;">
+                  </div>
+                  <div class="col col-12 text-center pb-3 text-center" style="color: blue; font-weight: bold; font-size: 18px">
+                    ورود به سامانه
+                  </div>
+                  <div class="col col-12 ">
+                    <p>
+                      <mat-form-field appearance="outline" style="width:80%;" >
+                        <mat-label>نام کاربری</mat-label>
+                        <input type="text" matInput style="padding-bottom: 1px !important;" required>
+                        <mat-icon matSuffix>account_circle</mat-icon>
+<!--                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
+                      </mat-form-field>
+                    </p>
+                  </div>
+                  <div class="col col-12 ">
+                    <p>
+                      <mat-form-field appearance="outline" style="width:80%;">
+                        <mat-label>کلمه عبور</mat-label>
+                        <input [attr.type]="hide ? 'password' : 'text'" matInput  style="padding-bottom: 1px !important;" required>
+                        <mat-icon matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                          {{hide ? 'visibility_off' : 'visibility'}}
+                        </mat-icon>
+                      </mat-form-field>
+                    </p>
+                  </div>
+                  <div class="col col-12">
+                    <button mat-raised-button color="primary" (click)="showModal = false"   style="width: 45%; height: 43px">
+                      <mat-spinner  *ngIf="wait"></mat-spinner>
+                      <span *ngIf="!wait">ورود</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-12">
+            <button type="button" class="btn btn-link"> راهنما</button>
+            <button type="button" class="btn btn-link">زبان</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

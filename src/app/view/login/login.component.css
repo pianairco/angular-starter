@@ -1,0 +1,19 @@
+.modal {
+  z-index: 999;
+}
+
+.mat-form-field-wrapper {
+  padding-bottom: 2px !important;
+  margin-bottom: 2px !important;
+}
+
+/*.modal-background {*/
+/*  background-color: aquamarine;*/
+/*  background-size: cover;*/
+/* */
+/*}*/
+
+.modal-dialog {
+  padding-right: 100px;
+  padding-left: 100px;
+}
