@@ -5,8 +5,8 @@
         <div class="row px-4">
           <div class="col mr-1">
             <p>
-              <mat-form-field appearance="outline" style="width: 100%">
-                <mat-label>طبقه</mat-label>
+              <mat-form-field appearance="outline" style="width: 100%;">
+                <mat-label>مجتمع</mat-label>
                 <mat-select>
                   <mat-option value="one">First option</mat-option>
                   <mat-option value="two">Second option</mat-option>
@@ -14,9 +14,32 @@
               </mat-form-field>
             </p>
           </div>
+          <div class="col">
+            <p>
+              <mat-form-field appearance="outline" style="width:100%;">
+                <mat-label>ساختمان</mat-label>
+                <mat-select>
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </p>
+          </div>
+          <div class="col mr-1">
+            <p>
+              <mat-form-field appearance="outline" style="width: 100%">
+                <mat-label>طبقه</mat-label>
+                <mat-select>
+                  <mat-option value="one">سیرلث</mat-option>
+                  <mat-option value="two">یمسندبنت</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </p>
+          </div>
         </div>
         <div class="row px-4">
           <div class="col col-16 " style="margin-right: 140px">
+            <button mat-button (click)="openDialog()">Open dialog</button>
             <button mat-raised-button color="primary" (click)="showModal = false" style="width: 25%; height: 43px">
               <span>اجرا</span>
             </button>

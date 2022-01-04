@@ -14,6 +14,9 @@ const routes: Routes = [
               { path: 'parking-managements',
                 loadChildren: () => import('./view/parking-managements/parking-managements.module')
                   .then(m => m.ParkingManagementsModule) },
+              { path: 'alert-managements',
+                loadChildren: () => import('./view/alert-managements/alert-managements.module')
+                  .then(m => m.AlertManagementsModule) },
             ]
           },
         ]

@@ -13,6 +13,7 @@ import {Login1Component} from "./view/login1/login1.component";
 import {Login2Component} from "./view/login2/login2.component";
 import {SharedModule} from "./shared/shared.module";
 
+
 @NgModule({
   declarations: [
     AppComponent,
