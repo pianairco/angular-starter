@@ -2,3 +2,7 @@
 .mat-form-field-label {
   height: 22px;
 }
+
+:host ::ng-deep .mat-header-cell {
+  text-align: center !important;
+}

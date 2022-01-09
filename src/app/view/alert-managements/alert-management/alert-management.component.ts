@@ -10,6 +10,7 @@ export class AlertManagementComponent implements OnInit {
   showModal = true;
   hide = true;
 
+
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {

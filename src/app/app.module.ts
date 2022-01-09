@@ -12,6 +12,11 @@ import {HomeComponent} from './view/home/home.component';
 import {Login1Component} from "./view/login1/login1.component";
 import {Login2Component} from "./view/login2/login2.component";
 import {SharedModule} from "./shared/shared.module";
+import { AttendanceComponent } from './view/attendance/attendance.component';
+import {ElementManagementsModule} from "./view/element-managements/element-managements.module";
+import {ElementManagementsComponent} from "./view/element-managements/element-managements.component";
+import {ElementManagementComponent} from "./view/element-managements/element-management/element-management.component";
+
 
 
 @NgModule({
@@ -21,6 +26,9 @@ import {SharedModule} from "./shared/shared.module";
     Login1Component,
     Login2Component,
     HomeComponent,
+    AttendanceComponent,
+
+
     // Login1Component,
     // Login2Component
   ],

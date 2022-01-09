@@ -17,6 +17,9 @@ const routes: Routes = [
               { path: 'alert-managements',
                 loadChildren: () => import('./view/alert-managements/alert-managements.module')
                   .then(m => m.AlertManagementsModule) },
+              { path: 'element-managements',
+                loadChildren: () => import('./view/element-managements/element-managements.module')
+                  .then(m => m.ElementManagementsModule) },
             ]
           },
         ]
@@ -27,6 +30,7 @@ const routes: Routes = [
       { path: 'logout', component: LoginComponent/*, canActivate:[AuthGuard]*/ },
     ]
   },
+  { path: 'element-managements', loadChildren: () => import('./view/element-managements/element-managements.module').then(m => m.ElementManagementsModule) },
 /*  { path: '**', component: PageNotFoundComponent }*/
 ];
 

@@ -12,6 +12,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatTableModule} from "@angular/material/table";
+import {MatRadioModule} from "@angular/material/radio";
 
 @NgModule({
   declarations:[
@@ -30,7 +31,8 @@ import {MatTableModule} from "@angular/material/table";
     MatSelectModule,
     MatDialogModule,
     MatCheckboxModule,
-    MatTableModule
+    MatTableModule,
+    MatRadioModule
   ],
   exports: [
     MatIconModule,
@@ -45,7 +47,8 @@ import {MatTableModule} from "@angular/material/table";
     MatFormFieldModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatTableModule
+    MatTableModule,
+    MatRadioModule
   ],
   providers: [
   ]
