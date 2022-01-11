@@ -30,7 +30,9 @@ const routes: Routes = [
       { path: 'logout', component: LoginComponent/*, canActivate:[AuthGuard]*/ },
     ]
   },
-  { path: 'element-managements', loadChildren: () => import('./view/element-managements/element-managements.module').then(m => m.ElementManagementsModule) },
+
+
+
 /*  { path: '**', component: PageNotFoundComponent }*/
 ];
 

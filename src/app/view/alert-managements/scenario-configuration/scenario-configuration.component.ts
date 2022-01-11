@@ -10,7 +10,7 @@ export class ScenarioConfigurationComponent implements OnInit {
   showModal = true;
   hide = true;
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'actions'];
   dataSource = ELEMENT_DATA;
 
   constructor(public dialog: MatDialog) { }
