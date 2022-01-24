@@ -11,6 +11,12 @@ const routes: Routes = [
       { path: '', children: [
           { path: '', redirectTo: '/tile', pathMatch: 'full' },
           { path: 'tile', component: HomeComponent, children:[
+              { path: 'intelligent-energys',
+                loadChildren: () => import('./view/intelligent-energys/intelligent-energys.module')
+                  .then(m => m.IntelligentEnergysModule) },
+              { path: 'intelligent-safety',
+                loadChildren: () => import('./view/intelligent-safety/intelligent-safety.module')
+                  .then(m => m.IntelligentSafetyModule) },
               { path: 'parking-managements',
                 loadChildren: () => import('./view/parking-managements/parking-managements.module')
                   .then(m => m.ParkingManagementsModule) },
@@ -30,9 +36,6 @@ const routes: Routes = [
       { path: 'logout', component: LoginComponent/*, canActivate:[AuthGuard]*/ },
     ]
   },
-
-
-
 /*  { path: '**', component: PageNotFoundComponent }*/
 ];
 
