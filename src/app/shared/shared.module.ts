@@ -13,6 +13,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatTableModule} from "@angular/material/table";
 import {MatRadioModule} from "@angular/material/radio";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations:[
@@ -48,7 +49,8 @@ import {MatRadioModule} from "@angular/material/radio";
     MatSelectModule,
     MatCheckboxModule,
     MatTableModule,
-    MatRadioModule
+    MatRadioModule,
+    MatProgressSpinnerModule
   ],
   providers: [
   ]

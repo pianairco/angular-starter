@@ -13,6 +13,7 @@ import {Login1Component} from "./view/login1/login1.component";
 import {Login2Component} from "./view/login2/login2.component";
 import {SharedModule} from "./shared/shared.module";
 import { AttendanceComponent } from './view/attendance/attendance.component';
+import {ConfirmComponent} from "./view/confirm/confirm.component";
 
 
 
@@ -25,8 +26,7 @@ import { AttendanceComponent } from './view/attendance/attendance.component';
     Login2Component,
     HomeComponent,
     AttendanceComponent,
-
-
+    ConfirmComponent
     // Login1Component,
     // Login2Component
   ],

@@ -1,21 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog} from "@angular/material/dialog";
 import {FormControl, Validators} from '@angular/forms';
-import {Router} from "@angular/router";
 
 
 @Component({
-  selector: 'app-login2',
-  templateUrl: './login2.component.html',
-  styleUrls: ['./login2.component.css']
+  selector: 'app-confirm',
+  templateUrl: './confirm.component.html',
+  styleUrls: ['./confirm.component.css']
 })
-export class Login2Component implements OnInit {
+export class ConfirmComponent implements OnInit {
   showModal = true;
   hide = true;
   wait = false;
+  time = 0;
 
-  constructor(public dialog: MatDialog, private router: Router) {
+  constructor(public dialog: MatDialog,) {
 
+  }
+
+  startTimer() {
+    this.time = 120;
+    setInterval(() => {
+      if(this.time > 0) {
+        this.time--;
+      }
+    },1000)
   }
 
   // email = new FormControl('', [Validators.required, Validators.email]);
@@ -30,12 +39,4 @@ export class Login2Component implements OnInit {
   ngOnInit(): void {
   }
 
-  sendOtp() {
-    console.log("otp sent");
-    this.wait = true;
-    setTimeout(()=>{                           // <<<---using ()=> syntax
-      this.wait = false;
-      this.router.navigate(['/confirm'])
-    }, 3000);
-  }
 }
