@@ -27,6 +27,9 @@ const routes: Routes = [
               { path: 'element-managements',
                 loadChildren: () => import('./view/element-managements/element-managements.module')
                   .then(m => m.ElementManagementsModule) },
+              { path: 'intelligent-security',
+                loadChildren: () => import('./view/intelligent-security/intelligent-security.module')
+                  .then(m => m.IntelligentSecurityModule) },
             ]
           },
         ]
