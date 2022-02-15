@@ -1,0 +1,60 @@
+<div class="home-component container" style="position: center">
+  <div class="row mt-4" style="border: solid 1px #cecece; border-radius: 15px; padding: 30px 0px 50px 0px;">
+    <div class="col col-12 p-0 text-center align-self-center">
+      <div class="container">
+        <div class="row mb-4 align-items-center">
+          <div class="col-9" >
+            <button mat-raised-button  color="primary" (click)="openDialog()">افزودن نقش سازمانی</button>
+          </div>
+          <div class="col-3">
+            <img class="img-thumbnail" src="../../../assets/google.png">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-12">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+              <!--- Note that these columns can be defined in any order.
+                    The actual rendered columns are set as a property on the row definition" -->
+
+              <!-- Position Column -->
+              <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef>ردیف</th>
+                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> نقش سازمانی </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+              </ng-container>
+
+<!--              &lt;!&ndash; Weight Column &ndash;&gt;-->
+<!--              <ng-container matColumnDef="weight">-->
+<!--                <th mat-header-cell *matHeaderCellDef> تجهیزات خروجی </th>-->
+<!--                <td mat-cell *matCellDef="let element"> {{element.weight}} </td>-->
+<!--              </ng-container>-->
+
+<!--              &lt;!&ndash; Symbol Column &ndash;&gt;-->
+<!--              <ng-container matColumnDef="symbol">-->
+<!--                <th mat-header-cell *matHeaderCellDef> فرکانس </th>-->
+<!--                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>-->
+<!--              </ng-container>-->
+
+              <ng-container matColumnDef="actions">
+                <th mat-header-cell  *matHeaderCellDef > عملیات </th>
+                <td mat-cell *matCellDef="let element" >
+                  <button mat-raised-button class="mx-1" color="accent">ویرایش</button>
+                  <button mat-raised-button color="warn">حذف</button>
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

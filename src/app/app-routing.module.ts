@@ -30,6 +30,8 @@ const routes: Routes = [
               { path: 'intelligent-security',
                 loadChildren: () => import('./view/intelligent-security/intelligent-security.module')
                   .then(m => m.IntelligentSecurityModule) },
+              { path: 'reports', loadChildren: () => import('./view/reports/reports.module').then(m => m.ReportsModule) },
+              { path: 'settings', loadChildren: () => import('./view/settings/settings.module').then(m => m.SettingsModule) },
             ]
           },
         ]

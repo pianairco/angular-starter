@@ -15,9 +15,6 @@ import {SharedModule} from "./shared/shared.module";
 import { AttendanceComponent } from './view/attendance/attendance.component';
 import {ConfirmComponent} from "./view/confirm/confirm.component";
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +23,7 @@ import {ConfirmComponent} from "./view/confirm/confirm.component";
     Login2Component,
     HomeComponent,
     AttendanceComponent,
-    ConfirmComponent
+    ConfirmComponent,
     // Login1Component,
     // Login2Component
   ],
