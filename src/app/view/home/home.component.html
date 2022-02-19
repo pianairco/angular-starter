@@ -1,6 +1,7 @@
-<mat-sidenav-container>
-  <mat-sidenav class="no-v-scroll" #appDrawer mode="rail" opened="true" (openedChange)="openedChange(appDrawer.opened)">
-    <mat-nav-list class="dashboard" style="overflow-y: auto;">
+<mat-sidenav-container >
+  <mat-sidenav #appDrawer mode="side"
+               opened="true" (openedChange)="openedChange(appDrawer.opened)">
+    <mat-nav-list class="dashboard" >
       <a mat-list-item>
         <mat-icon mat-list-icon >account_circle</mat-icon>
         <p matLine>نام کاربری</p>

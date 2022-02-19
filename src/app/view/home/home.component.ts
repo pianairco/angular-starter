@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {PersianCalendarService} from "../../services/persian-calendar-service.service";
+import {MatSidenavContainer} from "@angular/material/sidenav";
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,9 @@ export class HomeComponent implements OnInit {
 
   openedChange(val: any) {
     console.log('openedChange: ', val);
+  }
+
+  ngAfterViewInit() {
   }
 
   getJalaliDate(date: Date) {
