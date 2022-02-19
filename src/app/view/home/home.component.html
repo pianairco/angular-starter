@@ -1,6 +1,6 @@
 <mat-sidenav-container>
-  <mat-sidenav #appDrawer mode="rail" opened="true" (openedChange)="openedChange(appDrawer.opened)">
-    <mat-nav-list class="dashboard">
+  <mat-sidenav class="no-v-scroll" #appDrawer mode="rail" opened="true" (openedChange)="openedChange(appDrawer.opened)">
+    <mat-nav-list class="dashboard" style="overflow-y: auto;">
       <a mat-list-item>
         <mat-icon mat-list-icon >account_circle</mat-icon>
         <p matLine>نام کاربری</p>
@@ -8,7 +8,7 @@
 
       <mat-divider></mat-divider>
 
-      <a mat-list-item routerLink="parking-managements/intelligent-parking">
+      <a mat-list-item routerLinkActive="highlight-link" routerLink="parking-managements/intelligent-parking">
         <mat-icon mat-list-icon>inbox</mat-icon>
         <p matLine> پارکینگ هوشمند</p>
       </a>
@@ -17,7 +17,7 @@
         <p matLine> حضور و غیاب</p>
       </a>
       <a mat-list-item
-
+         routerLinkActive="highlight-link"
          routerLink="alert-managements/alert-management">
         <mat-icon mat-list-icon>drafts</mat-icon>
         <p matLine >مدیریت هشدار</p>
@@ -26,7 +26,8 @@
         <mat-icon mat-list-icon>drafts</mat-icon>
         <p matLine >کنترل دسترسی هوشمند</p>
       </a>
-      <a mat-list-item routerLink="element-managements/element-management">
+      <a mat-list-item routerLinkActive="highlight-link"
+         routerLink="element-managements/element-management">
         <mat-icon mat-list-icon>drafts</mat-icon>
         <p matLine > تجهیزات</p>
       </a>
@@ -46,23 +47,29 @@
         <mat-icon mat-list-icon>drafts</mat-icon>
         <p matLine >تماس تصویری</p>
       </a>
-      <a mat-list-item routerLink="intelligent-energys/air-conditioning">
+      <a mat-list-item
+         routerLinkActive="highlight-link"
+         routerLink="intelligent-energys/air-conditioning">
         <mat-icon mat-list-icon>drafts</mat-icon>
         <p matLine >انرژی هوشمند</p>
       </a>
-      <a mat-list-item routerLink="intelligent-safety/safety-equipment">
+      <a mat-list-item routerLinkActive="highlight-link"
+         routerLink="intelligent-safety/safety-equipment">
         <mat-icon mat-list-icon>drafts</mat-icon>
         <p matLine > ایمنی هوشمند</p>
       </a>
-      <a mat-list-item routerLink="intelligent-security/security-control">
+      <a mat-list-item routerLinkActive="highlight-link"
+         routerLink="intelligent-security/security-control">
         <mat-icon mat-list-icon>drafts</mat-icon>
         <p matLine > امنیت هوشمند</p>
       </a>
-      <a mat-list-item routerLink="reports/report-management">
+      <a mat-list-item routerLinkActive="highlight-link"
+         routerLink="reports/report-management">
         <mat-icon mat-list-icon>drafts</mat-icon>
         <p matLine >گزارشات و ثبت وقایع</p>
       </a>
-      <a mat-list-item routerLink="settings/role-settings">
+      <a mat-list-item routerLinkActive="highlight-link"
+         routerLink="settings/role-settings">
         <mat-icon mat-list-icon>drafts</mat-icon>
         <p matLine >پنل تنظیمات</p>
       </a>
@@ -92,6 +99,5 @@
         </div>
       </div>
     </div>
-
   </mat-sidenav-content>
 </mat-sidenav-container>
