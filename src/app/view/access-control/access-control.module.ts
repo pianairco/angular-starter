@@ -9,6 +9,7 @@ import { WorkingGroupComponent } from './working-group/working-group.component';
 import { GuestComponent } from './guest/guest.component';
 import { AccessCardComponent } from './access-card/access-card.component';
 import {RoleDialogComponent} from "../settings/role-setting/role-setting.component";
+import {SharedModule} from "../../shared/shared.module";
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {RoleDialogComponent} from "../settings/role-setting/role-setting.compone
   ],
   imports: [
     CommonModule,
-    AccessControlRoutingModule
+    AccessControlRoutingModule,
+    SharedModule
   ]
 })
 export class AccessControlModule { }
