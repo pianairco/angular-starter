@@ -32,6 +32,7 @@ export interface PeriodicElement {
   name: string;
   position: number;
 
+
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
