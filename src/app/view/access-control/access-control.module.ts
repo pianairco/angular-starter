@@ -5,7 +5,7 @@ import { AccessControlRoutingModule } from './access-control-routing.module';
 import { AccessControlComponent } from './access-control.component';
 import {AccessLevelComponent, LevelDialogComponent} from './access-level/access-level.component';
 import {AccessGroupComponent, GroupDialogComponent} from './access-group/access-group.component';
-import { WorkingGroupComponent } from './working-group/working-group.component';
+import {WorkingGroupComponent, WorkingGroupDialogComponent} from './working-group/working-group.component';
 import { GuestComponent } from './guest/guest.component';
 import { AccessCardComponent } from './access-card/access-card.component';
 import {SharedModule} from "../../shared/shared.module";
@@ -20,7 +20,8 @@ import {SharedModule} from "../../shared/shared.module";
     GuestComponent,
     AccessCardComponent,
     LevelDialogComponent,
-    GroupDialogComponent
+    GroupDialogComponent,
+    WorkingGroupDialogComponent
   ],
   imports: [
     CommonModule,

@@ -45,7 +45,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 @Component({
   selector: 'Group-dialog',
-  templateUrl: 'Group-dialog.component.html',
+  templateUrl: 'group-dialog.component.html',
 })
 export class GroupDialogComponent {
 }
