@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
-import {RoleDialogComponent} from "../../settings/role-setting/role-setting.component";
 
 @Component({
   selector: 'app-access-group',
@@ -19,7 +18,7 @@ export class AccessGroupComponent implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(RoleDialogComponent);
+    const dialogRef = this.dialog.open(GroupDialogComponent);
 
     dialogRef.afterClosed().subscribe((result: any) => {
       console.log(`Dialog result: ${result}`);

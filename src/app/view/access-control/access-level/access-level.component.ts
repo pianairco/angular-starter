@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
-import {RoleDialogComponent} from "../../settings/role-setting/role-setting.component";
 
 @Component({
   selector: 'app-access-level',
@@ -19,7 +18,7 @@ export class AccessLevelComponent implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(RoleDialogComponent);
+    const dialogRef = this.dialog.open(LevelDialogComponent);
 
     dialogRef.afterClosed().subscribe((result: any) => {
       console.log(`Dialog result: ${result}`);
@@ -31,8 +30,6 @@ export class AccessLevelComponent implements OnInit {
 export interface PeriodicElement {
   name: string;
   position: number;
-
-
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
