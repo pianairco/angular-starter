@@ -6,7 +6,7 @@ import { AccessControlComponent } from './access-control.component';
 import {AccessLevelComponent, LevelDialogComponent} from './access-level/access-level.component';
 import {AccessGroupComponent, GroupDialogComponent} from './access-group/access-group.component';
 import {WorkingGroupComponent, WorkingGroupDialogComponent} from './working-group/working-group.component';
-import { GuestComponent } from './guest/guest.component';
+import {GuestComponent, GuestDialogComponent} from './guest/guest.component';
 import { AccessCardComponent } from './access-card/access-card.component';
 import {SharedModule} from "../../shared/shared.module";
 
@@ -21,7 +21,8 @@ import {SharedModule} from "../../shared/shared.module";
     AccessCardComponent,
     LevelDialogComponent,
     GroupDialogComponent,
-    WorkingGroupDialogComponent
+    WorkingGroupDialogComponent,
+    GuestDialogComponent
   ],
   imports: [
     CommonModule,
