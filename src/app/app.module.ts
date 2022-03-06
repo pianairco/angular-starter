@@ -14,6 +14,10 @@ import {Login2Component} from "./view/login2/login2.component";
 import {SharedModule} from "./shared/shared.module";
 import { AttendanceComponent } from './view/attendance/attendance.component';
 import {ConfirmComponent} from "./view/confirm/confirm.component";
+import {AMSComponent} from "./view/ams/ams.component";
+import { TimeSheetComponent } from './view/ams/time-sheet/time-sheet.component';
+import { LeaveComponent } from './view/ams/leave/leave.component';
+import { VacationComponent } from './view/ams/vacation/vacation.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +28,10 @@ import {ConfirmComponent} from "./view/confirm/confirm.component";
     HomeComponent,
     AttendanceComponent,
     ConfirmComponent,
+    AMSComponent,
+    TimeSheetComponent,
+    LeaveComponent,
+    VacationComponent
     // Login1Component,
     // Login2Component
   ],

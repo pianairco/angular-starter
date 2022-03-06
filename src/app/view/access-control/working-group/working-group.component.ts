@@ -20,7 +20,7 @@ export class WorkingGroupComponent implements OnInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(RoleDialogComponent);
+    const dialogRef = this.dialog.open(WorkingGroupDialogComponent);
 
     dialogRef.afterClosed().subscribe((result: any) => {
       console.log(`Dialog result: ${result}`);

@@ -26,6 +26,6 @@ export class GuestComponent implements OnInit {
 }
 @Component({
   selector: 'Guest-dialog',
-  templateUrl: 'Guest.dialog.component.html',
+  templateUrl: 'Guest-dialog.component.html',
 })
 export class GuestDialogComponent {}

@@ -45,6 +45,7 @@ const routes: Routes = [
     ]
   },
   { path: 'accass-control', loadChildren: () => import('./view/access-control/access-control.module').then(m => m.AccessControlModule) },
+  { path: 'AMS', loadChildren: () => import('./view/ams/ams.module').then(m => m.AMSModule) },
 /*  { path: '**', component: PageNotFoundComponent }*/
 ];
 
