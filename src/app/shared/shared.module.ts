@@ -14,6 +14,7 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatTableModule} from "@angular/material/table";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {HierarchicalListComponent} from "../view/organization-managements/hierarchical-list/hierarchical-list.component";
 
 @NgModule({
   declarations:[

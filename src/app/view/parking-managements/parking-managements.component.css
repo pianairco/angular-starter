@@ -1,6 +1,7 @@
 .active-link {
- border-bottom: 2px solid #e7d9d9;
+  color: orange;
 }
+
 
 .btn {
   outline: none !important;

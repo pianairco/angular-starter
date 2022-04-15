@@ -27,12 +27,16 @@ const routes: Routes = [
               { path: 'element-managements',
                 loadChildren: () => import('./view/element-managements/element-managements.module')
                   .then(m => m.ElementManagementsModule) },
+              { path: 'organization-managements',
+                loadChildren: () => import('./view/organization-managements/organization-managements.module')
+                  .then(m => m.OrganizationManagementsModule) },
               { path: 'intelligent-security',
                 loadChildren: () => import('./view/intelligent-security/intelligent-security.module')
                   .then(m => m.IntelligentSecurityModule) },
               { path: 'reports', loadChildren: () => import('./view/reports/reports.module').then(m => m.ReportsModule) },
               { path: 'settings', loadChildren: () => import('./view/settings/settings.module').then(m => m.SettingsModule) },
               { path: 'access-control', loadChildren: () => import('./view/access-control/access-control.module').then(m => m.AccessControlModule) },
+              { path: 'ams', loadChildren: () => import('./view/ams/ams.module').then(m => m.AMSModule) },
             ]
           },
         ]
@@ -44,8 +48,6 @@ const routes: Routes = [
       { path: 'logout', component: LoginComponent/*, canActivate:[AuthGuard]*/ },
     ]
   },
-  { path: 'accass-control', loadChildren: () => import('./view/access-control/access-control.module').then(m => m.AccessControlModule) },
-  { path: 'AMS', loadChildren: () => import('./view/ams/ams.module').then(m => m.AMSModule) },
 /*  { path: '**', component: PageNotFoundComponent }*/
 ];
 

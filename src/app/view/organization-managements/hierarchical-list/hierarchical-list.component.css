@@ -1,0 +1,27 @@
+.selected {
+  background-color: orange;
+}
+
+.my-menu {
+  border: 1px solid gray;
+  border-radius: 12px;
+  margin-left: 4px;
+}
+
+.my-menu-item {
+  cursor: pointer;
+}
+
+.my-menu-item:hover {
+  background-color: #ffcb6d;
+}
+
+.my-menu-item:first-child {
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+}
+
+.my-menu-item:last-child {
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
