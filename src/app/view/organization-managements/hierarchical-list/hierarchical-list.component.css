@@ -8,20 +8,25 @@
   margin-left: 4px;
 }
 
-.my-menu-item {
+.my-menu-item .my-menu-new-item{
   cursor: pointer;
+}
+
+.my-menu-new-item:hover {
+  background-color: #53ff5f;
 }
 
 .my-menu-item:hover {
   background-color: #ffcb6d;
 }
 
-.my-menu-item:first-child {
+
+.my-menu-new-item:first-child,.my-menu-item:first-child {
   border-top-right-radius: 12px;
   border-top-left-radius: 12px;
 }
 
-.my-menu-item:last-child {
+.my-menu-item:last-child,.my-menu-new-item:last-child {
   border-bottom-right-radius: 12px;
   border-bottom-left-radius: 12px;
 }

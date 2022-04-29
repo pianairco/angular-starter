@@ -13,6 +13,7 @@ export class CameraManagementComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   openDialog() {
     const dialogRef = this.dialog.open(CameraDialogComponent);
 
