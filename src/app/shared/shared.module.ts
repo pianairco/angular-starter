@@ -14,12 +14,21 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatTableModule} from "@angular/material/table";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
-import {HierarchicalListComponent} from "../view/organization-managements/hierarchical-list/hierarchical-list.component";
+import {
+  HierarchicalListComponent
+} from "./hierarchical-list/hierarchical-list.component";
+import {HierarchicalListNewItemComponent} from "./hierarchical-list-new-item/hierarchical-list-new-item.component";
+import {FormsModule} from "@angular/forms";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations:[
+    HierarchicalListComponent,
+    HierarchicalListNewItemComponent
   ],
   imports:[
+    CommonModule,
+    FormsModule,
     MatIconModule,
     MatListModule,
     MatSidenavModule,
@@ -51,7 +60,9 @@ import {HierarchicalListComponent} from "../view/organization-managements/hierar
     MatCheckboxModule,
     MatTableModule,
     MatRadioModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    HierarchicalListComponent,
+    HierarchicalListNewItemComponent
   ],
   providers: [
   ]

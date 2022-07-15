@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ListDto} from "./hierarchical-list/hierarchical-list.component";
+import {ListDto} from "../../shared/hierarchical-list/hierarchical-list.component";
 
 @Component({
   selector: 'app-organization-managements',

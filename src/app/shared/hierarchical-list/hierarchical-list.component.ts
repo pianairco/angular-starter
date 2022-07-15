@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MatDialog, MatDialogRef} from "@angular/material/dialog";
-import {CameraDialogComponent} from "../../intelligent-security/camera-management/camera-management.component";
-import {max} from "rxjs/operators";
+import {HierarchicalListNewItemComponent} from "../hierarchical-list-new-item/hierarchical-list-new-item.component";
 
 @Component({
   selector: 'app-hierarchical-list',
@@ -167,24 +166,4 @@ export class ListDto {
   private children: ListDto[];
 }
 
-@Component({
-  selector: 'hierarchical-list-new-item',
-  templateUrl: 'hierarchical-list-new-item.component.html',
-})
-export class HierarchicalListNewItemComponent {
-  item= {
-    name: ''
-  };
 
-  constructor(public matDialogRef: MatDialogRef<HierarchicalListNewItemComponent>) {
-    /*this.matDialogRef.disableClose = true;
-    matDialogRef.backdropClick().subscribe(result => {
-      console.log("closed!");
-    });*/
-  }
-
-  close() {
-    //disable default close operation
-    this.matDialogRef.close(this.item);
-  }
-}

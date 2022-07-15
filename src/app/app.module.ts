@@ -23,7 +23,7 @@ import {ConfirmComponent} from "./view/confirm/confirm.component";
     Login2Component,
     HomeComponent,
     AttendanceComponent,
-    ConfirmComponent,
+    ConfirmComponent
     // Login1Component,
     // Login2Component
   ],
@@ -33,9 +33,10 @@ import {ConfirmComponent} from "./view/confirm/confirm.component";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule.forRoot()
   ],
   exports: [
+    SharedModule
   ],
   bootstrap: [AppComponent]
 })
