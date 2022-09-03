@@ -9,6 +9,8 @@ import {WorkingGroupComponent, WorkingGroupDialogComponent} from './working-grou
 import {GuestComponent, GuestDialogComponent} from './guest/guest.component';
 import { AccessCardComponent } from './access-card/access-card.component';
 import {SharedModule} from "../../shared/shared.module";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {BrowserModule} from "@angular/platform-browser";
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import {SharedModule} from "../../shared/shared.module";
   imports: [
     CommonModule,
     AccessControlRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class AccessControlModule { }

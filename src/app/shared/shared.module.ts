@@ -20,6 +20,7 @@ import {
 import {HierarchicalListNewItemComponent} from "./hierarchical-list-new-item/hierarchical-list-new-item.component";
 import {FormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
 
 @NgModule({
   declarations:[
@@ -43,7 +44,8 @@ import {CommonModule} from "@angular/common";
     MatDialogModule,
     MatCheckboxModule,
     MatTableModule,
-    MatRadioModule
+    MatRadioModule,
+    MatAutocompleteModule
   ],
   exports: [
     MatIconModule,
@@ -62,7 +64,8 @@ import {CommonModule} from "@angular/common";
     MatRadioModule,
     MatProgressSpinnerModule,
     HierarchicalListComponent,
-    HierarchicalListNewItemComponent
+    HierarchicalListNewItemComponent,
+    MatAutocompleteModule
   ],
   providers: [
   ]
