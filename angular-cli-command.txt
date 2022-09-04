@@ -1,3 +1,6 @@
+# git
+# git remote set-url origin https://{{token}}@github.com/pianairco/angular-starter
+
 ng generate module view/alert-managements --route alert-managements --module app.module
 ng g c view/parking-management/intelligent-parking --skipTests
 

@@ -11,3 +11,6 @@
 /*::ng-deep .mat-form-field-label {
   height: 22px;
 }*/
+table {
+  width: 100%;
+}

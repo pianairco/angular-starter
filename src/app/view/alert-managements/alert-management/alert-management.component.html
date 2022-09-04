@@ -1,83 +1,171 @@
 <div class="home-component container" style="position: center">
   <div class="row mt-4" style="border: solid 1px #cecece; border-radius: 15px; padding: 30px 0px 50px 0px;">
     <div class="col col-12 p-0 text-center align-self-center">
-      <div class="container p-2">
-        <div class="row px-4 mb-4 align-items-center">
-          <div class="col-9 " >
-            <button mat-raised-button color="primary" (click)="openDialog()">افزودن لیست هشدار</button>
+      <div class="container">
+        <div class="row mb-4 justify-content-end align-items-end">
+          <div class="col-9">
+            <div class="row">
+              <div class="col-3">
+                <button mat-button color="primary">PDF</button>
+                <button mat-button color="primary">EXCEL</button>
+              </div>
+            </div>
           </div>
           <div class="col-3">
             <img class="img-thumbnail" src="../../../assets/google.png">
           </div>
         </div>
+        <div class="row">
+          <div class="col col-12">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-        <div class="row px-4">
-          <div class="col mr-1">
-            <p>
-              <mat-form-field appearance="outline" style="width: 100%;">
-                <mat-label>مجتمع</mat-label>
-                <mat-select>
-                  <mat-option value="one">First option</mat-option>
-                  <mat-option value="two">Second option</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </p>
-          </div>
-          <div class="col">
-            <p>
-              <mat-form-field appearance="outline" style="width:100%;">
-                <mat-label>ساختمان</mat-label>
-                <mat-select>
-                  <mat-option value="one">First option</mat-option>
-                  <mat-option value="two">Second option</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </p>
-          </div>
-          <div class="col mr-1">
-            <p>
-              <mat-form-field appearance="outline" style="width: 100%">
-                <mat-label>طبقه</mat-label>
-                <mat-select>
-                  <mat-option value="one">سیرلث</mat-option>
-                  <mat-option value="two">یمسندبنت</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </p>
-          </div>
-        </div>
+              <!--- Note that these columns can be defined in any order.
+                    The actual rendered columns are set as a property on the row definition" -->
 
-        <div class="container p-2">
-          <div class="row px-4">
-            <div class="col mr-1">
-              <p>
-                <mat-form-field appearance="outline" style="width: 100%">
-                  <mat-label>از تاریخ</mat-label>
-                  <input matInput type="text" >
-                </mat-form-field>
-              </p>
-            </div>
-            <div class="col">
-              <p>
-                <mat-form-field appearance="outline" style="width: 100%">
-                  <mat-label>تا تاریخ</mat-label>
-                  <input matInput type="text" >
-                </mat-form-field>
-              </p>
-            </div>
-          </div>
+              <!-- Position Column -->
+              <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef> نوع تجهیزات </th>
+                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+              </ng-container>
 
-        </div>
-        <div class="row px-4">
-          <div class="col col-16 " style="margin-right: 90px">
+              <!-- Name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> نام </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+              </ng-container>
 
-            <button mat-raised-button color="primary" (click)="showModal = false" style="width: 25%; height: 43px">
-              <span>اجرا</span>
-            </button>
+              <!-- Weight Column -->
+              <ng-container matColumnDef="weight">
+                <th mat-header-cell *matHeaderCellDef> زمان بندی </th>
+                <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+              </ng-container>
+
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="symbol">
+                <th mat-header-cell *matHeaderCellDef> نماد </th>
+                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="home-component container" style="position: center">-->
+<!--  <div class="row mt-4" style="border: solid 1px #cecece; border-radius: 15px; padding: 30px 0px 50px 0px;">-->
+<!--    <div class="col col-12 p-0 text-center align-self-center">-->
+<!--      <div class="container p-2">-->
+<!--        <div class="row px-4 mb-4 align-items-center">-->
+<!--          <div class="col-9 " >-->
+<!--            <button mat-raised-button color="primary" (click)="openDialog()">افزودن لیست هشدار</button>-->
+<!--          </div>-->
+<!--          <div class="col-3">-->
+<!--            <img class="img-thumbnail" src="../../../assets/google.png">-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="row px-4">-->
+<!--          <div class="col mr-1">-->
+<!--            <p>-->
+<!--              <mat-form-field appearance="outline" style="width: 100%;">-->
+<!--                <mat-label>مجتمع</mat-label>-->
+<!--                <mat-select>-->
+<!--                  <mat-option value="one">First option</mat-option>-->
+<!--                  <mat-option value="two">Second option</mat-option>-->
+<!--                </mat-select>-->
+<!--              </mat-form-field>-->
+<!--            </p>-->
+<!--          </div>-->
+<!--          <div class="col">-->
+<!--            <p>-->
+<!--              <mat-form-field appearance="outline" style="width:100%;">-->
+<!--                <mat-label>ساختمان</mat-label>-->
+<!--                <mat-select>-->
+<!--                  <mat-option value="one">First option</mat-option>-->
+<!--                  <mat-option value="two">Second option</mat-option>-->
+<!--                </mat-select>-->
+<!--              </mat-form-field>-->
+<!--            </p>-->
+<!--          </div>-->
+<!--          <div class="col mr-1">-->
+<!--            <p>-->
+<!--              <mat-form-field appearance="outline" style="width: 100%">-->
+<!--                <mat-label>طبقه</mat-label>-->
+<!--                <mat-select>-->
+<!--                  <mat-option value="one">سیرلث</mat-option>-->
+<!--                  <mat-option value="two">یمسندبنت</mat-option>-->
+<!--                </mat-select>-->
+<!--              </mat-form-field>-->
+<!--            </p>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="container p-2">-->
+<!--          <div class="row px-4">-->
+<!--            <div class="col mr-1">-->
+<!--              <p>-->
+<!--                <mat-form-field appearance="outline" style="width: 100%">-->
+<!--                  <mat-label>از تاریخ</mat-label>-->
+<!--                  <input matInput type="text" >-->
+<!--                </mat-form-field>-->
+<!--              </p>-->
+<!--            </div>-->
+<!--            <div class="col">-->
+<!--              <p>-->
+<!--                <mat-form-field appearance="outline" style="width: 100%">-->
+<!--                  <mat-label>تا تاریخ</mat-label>-->
+<!--                  <input matInput type="text" >-->
+<!--                </mat-form-field>-->
+<!--              </p>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--        </div>-->
+<!--        <div class="row px-4">-->
+<!--          <div class="col col-16 " style="margin-right: 90px">-->
+
+<!--            <button mat-raised-button color="primary" (click)="showModal = false" style="width: 25%; height: 43px">-->
+<!--              <span>اجرا</span>-->
+<!--            </button>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
