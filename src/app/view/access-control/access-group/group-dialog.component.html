@@ -32,32 +32,7 @@
       </div>
     </div>
     <div>
-      <div class="col">
-        <form class="example-form">
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Search for a name</mat-label>
-          <input type="text"
-                 placeholder="Pick one"
-                 aria-label="Search for a name"
-                 matInput
-                 [formControl]="myControl2"
-                 [matAutocomplete]="autoName">
-          <mat-autocomplete #autoName="matAutocomplete">
-            <mat-option *ngFor="let option2 of filteredOptions2 | async" [value]="option2">
-              {{option2}}
-            </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>
-        </form>
-      </div>
-      <div class="col">
-        <p>
-          <mat-form-field appearance="outline" style="width: 100%">
-            <mat-label>نام سطح دسترسی</mat-label>
-            <input matInput >
-          </mat-form-field>
-        </p>
-      </div>
+
     </div>
 
     <div class="row">

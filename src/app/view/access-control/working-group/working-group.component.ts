@@ -12,7 +12,7 @@ export class WorkingGroupComponent implements OnInit {
   showModal = true;
   hide = true;
 
-  displayedColumns: string[] = ['position', 'name', 'actions'];
+  displayedColumns: string[] = ['position', 'firstName', 'lastName', 'unit', 'date', 'endOfContract', 'status', 'actions'];
   dataSource = ELEMENT_DATA;
   constructor(public dialog: MatDialog) { }
 
@@ -30,17 +30,20 @@ export class WorkingGroupComponent implements OnInit {
 }
 
 export interface PeriodicElement {
-  name: string;
   position: number;
-
-
+  firstName: string;
+  lastName:string;
+  unit: number;
+  date: number;
+  endOfContract: number;
+  status: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen'},
-  {position: 2, name: 'Helium'},
-  {position: 3, name: 'Lithium'},
-  {position: 4, name: 'Beryllium'},
+  {position: 1, firstName: 'Hydrogen', lastName: 'hh', unit: 1, date:2, endOfContract: 23, status: 'gg'  },
+  {position: 2, firstName: 'Helium' , lastName: 'hh', unit: 1, date:2, endOfContract: 23, status: 'gg'},
+  {position: 3, firstName: 'Lithium' , lastName: 'hh', unit: 1, date:2, endOfContract: 23, status: 'gg'},
+  {position: 4, firstName: 'Beryllium' , lastName: 'hh', unit: 1, date:2, endOfContract: 23, status: 'gg'}
 
 ];
 
