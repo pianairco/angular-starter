@@ -2,3 +2,9 @@ https://stackoverflow.com/questions/68775869/support-for-password-authentication
 git remote set-url origin https://<token>@github.com/<username>/<repo>
 
 git remote set-url origin https://@github.com/pianairco/premier-lineup
+
+
+git remote set-url origin https://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@github.com/pianairco/angular-starter
+
+
+

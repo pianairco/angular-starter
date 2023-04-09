@@ -68,6 +68,17 @@ export class ConsequenceParametersDetailComponent implements OnInit {
     this.attributes$.next(this._attributes);
   }
 
+  showHelp() {
+    this.messagingService.showMessage(
+      MessageType.ERROR,
+      'اعلام خطا',
+      'مقدار فیلد باید بزرگتر از 0 و کوچکتر یا مساوی 1 باشد').then(res => {
+      console.log("close message success")
+    }, err => {
+      console.log("close message by error")
+    });
+  }
+
   navigateToChangeTypeAttribute(parameterId, parameterTypeId) {
     console.log("navigate to select", parameterId, parameterTypeId)
     this.router.navigate(['select', parameterId, parameterTypeId], { relativeTo: this.route });

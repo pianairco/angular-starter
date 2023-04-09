@@ -2,6 +2,9 @@
   <div class="col col-12 col-sm-12 col-md-9 p-0">
     <div class="alert alert-primary text-center m-0" *ngIf="(editName$ | async) == false">
       {{_paramAlias ? ('RISK-MANAGEMENT.SETTINGS.CONSEQUENCE-PARAMETERS.' + (_paramAlias | uppercase) | translate) : _paramName}}
+      <button class="btn btn-sm float-end mb-1" style="color: darkorange" (click)="showHelp()">
+        <i class="fas fa-info"></i>
+      </button>
       <button class="btn btn-sm float-end mb-1" (click)="gotoEditName()"
               *ngIf="!_paramAlias"><i class="fas fa-edit"></i></button>
       <button class="btn btn-sm float-end mb-1"
