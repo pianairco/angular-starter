@@ -1,12 +1,9 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {LoadingService} from "../../../services/loading.service";
 import {NotificationService} from "../../../services/notification.service";
-import {ProductEditorComponent} from "../product-editor/product-editor.component";
 import {Product} from "../product/product.component";
 import {ConstantService} from "../../../services/constant.service";
-import {AjaxCallService} from "../../../services/ajax-call.service";
-import {ProductEditorModalComponent} from "../product-editor-modal/product-editor-modal.component";
 import {ShareStateService} from "../../../services/share-state.service";
 import {AuthenticationService} from "../../../services/authentication-service.service";
 import {ProductCategoryService} from "../../../services/product-category.service";

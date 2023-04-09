@@ -13,6 +13,7 @@ import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import {TipComponent} from "./tip/tip.component";
 import {InfoBoxComponent} from "./info-box/info-box.component";
+import {InputMaskDirective} from "../directives/input-mask.directive";
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {InfoBoxComponent} from "./info-box/info-box.component";
     FormMakerComponent,
     NotificationComponent,
     LoadingComponent,
-    PictureBoxComponent
+    PictureBoxComponent,
+    InputMaskDirective
   ],
   exports: [
     TopbarComponent,
@@ -36,7 +38,8 @@ import {InfoBoxComponent} from "./info-box/info-box.component";
     FormMakerComponent,
     NotificationComponent,
     LoadingComponent,
-    PictureBoxComponent
+    PictureBoxComponent,
+    InputMaskDirective
   ],
     imports: [
         CommonModule,

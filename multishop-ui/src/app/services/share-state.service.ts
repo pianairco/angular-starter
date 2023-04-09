@@ -10,10 +10,10 @@ import {ProductCategoryService} from "./product-category.service";
 })
 export class ShareStateService {
   private urlMap = {
-    product: '/tile/shop/product-editor',
-    'product-creator': '/tile/shop/product-creator',
-    category: '/tile/shop/category-editor',
-    'category-creator': '/tile/shop/category-creator'
+    product: '/editor/product-editor',
+    'product-creator': '/editor/product-creator',
+    category: '/editor/category-editor',
+    'category-creator': '/editor/category-creator'
   };
 
   private _editModeSubject: any;
@@ -66,8 +66,13 @@ export class ShareStateService {
 
     this.editModeSubject.subscribe(next => {
       // console.log(next)
-      if (next.editMode)
-        this.router.navigate([this.urlMap[next.urlKey]], { queryParams: { }});
+      if (next.editMode) {
+        console.log("222222222222222")
+        console.log(next)
+        console.log(next.urlKey, this.urlMap[next.urlKey])
+          this.router.navigate([this.urlMap[next.urlKey]], { queryParams: { }});
+      }
+
       // this.router.navigate([this.urlMap[next.urlKey]], { queryParams: { returnUrl: next.returnUrl } })
     });
   }
@@ -99,8 +104,8 @@ export class ShareStateService {
     console.log(returnUrl)
     this._editModeObject = new EditModeObject(
       false, null, null, null);
-    this.router.navigateByUrl('/tile/home');
-    // this.router.navigate([returnUrl]);
+    // this.router.navigateByUrl('/tile/home');
+    this.router.navigate([returnUrl]);
   }
 
   navigateToShop (category) {

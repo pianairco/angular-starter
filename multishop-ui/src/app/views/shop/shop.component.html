@@ -1,7 +1,8 @@
-<ng-container *ngIf="(shareStateService.editModeSubject | async).editMode">
+<!--<ng-container *ngIf="(shareStateService.editModeSubject | async).editMode">
   <router-outlet></router-outlet>
-</ng-container>
-<ng-container *ngIf="!(shareStateService.editModeSubject | async).editMode">
+</ng-container>-->
+<!--<ng-container *ngIf="!(shareStateService.editModeSubject | async).editMode">-->
+<ng-container >
   <section class="section pt-1 pb-1 pr-1 pl-1" >
     <div class="container is-fluid">
       <div class="columns" style="margin: 0px;">
@@ -42,6 +43,7 @@
           </div>
           <!--      <app-product-categorization [categorization]="categorization"></app-product-categorization>-->
         </div>
+<!--        <div [ngClass]="(shareStateService.editModeSubject | async).editMode ? 'column is-12': 'column is-12-mobile is-10-desktop is-8-tablet'" style="background-color: inherit;">-->
         <div [ngClass]="(shareStateService.editModeSubject | async).editMode ? 'column is-12': 'column is-12-mobile is-10-desktop is-8-tablet'" style="background-color: inherit;">
           <router-outlet></router-outlet>
         </div>

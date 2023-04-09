@@ -14,6 +14,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AuthenticationService} from "./services/authentication-service.service";
 import {InitializerService} from "./services/initializer.service";
 import {SharedModule} from "./components/shared.module";
+import {EditorModule} from "./views/editor/editor.module";
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import {SharedModule} from "./components/shared.module";
     ReactiveFormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     // SocialLoginModule,
-    SharedModule
+    SharedModule,
+    EditorModule
   ],
   providers: [
     AuthenticationService,

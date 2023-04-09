@@ -99,7 +99,9 @@ public class JWTAuthenticationFilter extends AbstractAuthenticationProcessingFil
 
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        "form:" + host + ":" + new String(Base64.getEncoder().encode(username.getBytes(StandardCharsets.UTF_8))),
+                        "form:" + host + ":" +
+                                new String(Base64.getEncoder().encode(username.getBytes(StandardCharsets.UTF_8))) +
+                                ":" + password,
                         password,
 //                        "form:" + new String(Base64.getEncoder().encode(loginInfo.getPassword().getBytes(StandardCharsets.UTF_8))),
                         new ArrayList<>())
@@ -189,7 +191,9 @@ public class JWTAuthenticationFilter extends AbstractAuthenticationProcessingFil
 
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        "g-oauth2:" + host + ":" + new String(Base64.getEncoder().encode(userEntity.getEmail().getBytes(StandardCharsets.UTF_8))),
+                        "g-oauth2:" + host + ":" +
+                                new String(Base64.getEncoder().encode(userEntity.getEmail().getBytes(StandardCharsets.UTF_8))) +
+                                ":0000",
 //                        userEntity.getEmail(),
 //                        "g-oauth2:" + new String(Base64.getEncoder().encode(userEntity.getPassword().getBytes(StandardCharsets.UTF_8))),
                         userEntity.getPassword(),
@@ -201,7 +205,10 @@ public class JWTAuthenticationFilter extends AbstractAuthenticationProcessingFil
         if (googleUserRepository.findByEmail(principal.getEmail()) != null) {
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
-                            "principal:" + host + ":" + new String(Base64.getEncoder().encode(principal.getEmail().getBytes(StandardCharsets.UTF_8))),
+                            "principal:" + host + ":" +
+                                    new String(Base64.getEncoder().encode(principal.getEmail().getBytes(StandardCharsets.UTF_8))) +
+                                     ":0000"
+                            ,
 //                        userEntity.getEmail(),
 //                        "g-oauth2:" + new String(Base64.getEncoder().encode(userEntity.getPassword().getBytes(StandardCharsets.UTF_8))),
                             "0000",
@@ -281,13 +288,13 @@ public class JWTAuthenticationFilter extends AbstractAuthenticationProcessingFil
                     (request.getContentType().startsWith("APPLICATION/JSON") ||
                             request.getContentType().startsWith("application/json"))) {
                 LoginInfo loginInfo = new ObjectMapper().readValue(request.getInputStream(), LoginInfo.class);
-                if(Arrays.stream(env.getActiveProfiles()).anyMatch(p -> "develop".matches(p))) {
+                /*if(Arrays.stream(env.getActiveProfiles()).anyMatch(p -> "develop".matches(p))) {
                     return byForm(
                             "rahmatii1366@gmail.com",
                             "0000",
                             null,
                             null, host);
-                }
+                }*/
                 if(host.equalsIgnoreCase(appDataCache.getDomain())) {
                     if (loginInfo != null && !CommonUtils.isNull(loginInfo.getAccessToken()))
                         return byGoogle(loginInfo.getAccessToken(), host);

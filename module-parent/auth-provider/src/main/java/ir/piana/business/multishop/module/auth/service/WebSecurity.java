@@ -30,6 +30,9 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 @Configuration
 @EnableWebSecurity
@@ -155,6 +158,12 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.ALWAYS);
     }
 
+    @Bean("mySet")
+    Set<AuthenticationManager> getMySet() throws Exception {
+        Set<AuthenticationManager> set = new HashSet<>();
+        set.add(authenticationManager());
+        return set;
+    }
 
     @Bean
     public AuthenticationSuccessHandler getSuccessHandler() {

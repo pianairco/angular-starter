@@ -24,7 +24,7 @@ export class ShopComponent implements OnInit {
               public router: Router,
               private changeDetectorRef: ChangeDetectorRef,
               private ngZone: NgZone,
-              private categoryService: ProductCategoryService,
+              public categoryService: ProductCategoryService,
               public shareStateService: ShareStateService,
               public authService: AuthenticationService,
               private ajaxCallService: AjaxCallService,

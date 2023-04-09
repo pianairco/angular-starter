@@ -18,7 +18,11 @@ const routes: Routes = [
                 loadChildren: () => import('./views/shop/shop.module').then(m => m.ShopModule)
               },
               { path: 'add-user/:groupName/:formName', component: FormMakerComponent, canActivate:[AuthGuard] }
-            ] },
+            ]
+          },
+          { path: 'editor',
+            loadChildren: () => import('./views/editor/editor.module').then(m => m.EditorModule)
+          },
         ]
       }
     ]

@@ -6,20 +6,26 @@ import ir.piana.business.multishop.common.data.repository.SiteRepository;
 import ir.piana.business.multishop.common.exceptions.HttpCommonRuntimeException;
 import ir.piana.business.multishop.module.auth.action.AuthAction;
 import ir.piana.business.multishop.module.auth.data.entity.GoogleUserEntity;
+import ir.piana.business.multishop.module.auth.data.entity.UserRolesEntity;
 import ir.piana.business.multishop.module.auth.data.repository.GoogleUserRepository;
+import ir.piana.business.multishop.module.auth.data.repository.UserRolesRepository;
 import ir.piana.business.multishop.module.auth.model.AppInfo;
 import ir.piana.business.multishop.module.auth.model.LoginInfo;
 import ir.piana.business.multishop.module.auth.model.SiteInfo;
 import ir.piana.business.multishop.module.auth.model.UserModel;
 import ir.piana.business.multishop.module.auth.service.CrossDomainAuthenticationService;
+import ir.piana.business.multishop.module.auth.service.JWTAuthenticationFilter;
 import ir.piana.business.multishop.module.site.data.entity.SiteInfoEntity;
 import ir.piana.business.multishop.module.site.service.SiteInfoService;
 import nl.captcha.Captcha;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -31,7 +37,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Base64;
 import java.util.Map;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api")
@@ -40,7 +50,14 @@ public class AuthRest {
     private AuthAction authAction;
 
     @Autowired
+    @Qualifier("mySet")
+    Set<AuthenticationManager> authenticationManagerSet;
+
+    @Autowired
     private GoogleUserRepository userRepository;
+
+    @Autowired
+    private UserRolesRepository userRolesRepository;
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -195,7 +212,34 @@ public class AuthRest {
             HttpSession session) throws IOException {
         GoogleUserEntity byEmail = userRepository.findByEmail(loginInfo.getUsername());
         Captcha sessionCaptcha = (Captcha)session.getAttribute("simpleCaptcha");
-        if(byEmail != null &&
+        if(byEmail == null && loginInfo.getPassword() != null && loginInfo.getCaptcha() != null &&
+                sessionCaptcha != null) {
+            String host = (String) request.getAttribute("host");
+            Authentication authentication = authenticationManagerSet.iterator().next().authenticate(
+                    new UsernamePasswordAuthenticationToken(
+                            "form:" + host + ":" +
+                                    new String(Base64.getEncoder().encode(loginInfo.getUsername().getBytes(StandardCharsets.UTF_8))) +
+                                    ":" + loginInfo.getPassword(),
+                            loginInfo.getPassword(),
+//                        "form:" + new String(Base64.getEncoder().encode(loginInfo.getPassword().getBytes(StandardCharsets.UTF_8))),
+                            new ArrayList<>())
+            );
+            if(authentication.isAuthenticated()) {
+                return ResponseEntity.ok().build();
+            }
+/*            byEmail = GoogleUserEntity.builder()
+                    .email(loginInfo.getUsername())
+                    .userId(loginInfo.getUsername())
+                    .password(bCryptPasswordEncoder.encode(loginInfo.getPassword()))
+                    .formPassword(bCryptPasswordEncoder.encode(loginInfo.getPassword()))
+                    .build();
+            userRepository.save(byEmail);
+            byEmail = userRepository.findByEmail(byEmail.getEmail());
+            userRolesRepository.save(UserRolesEntity.builder()
+                    .userId(byEmail.getId())
+                    .roleName("ROLE_USER")
+                    .build());*/
+        } else if (byEmail != null &&
                 sessionCaptcha != null &&
                 bCryptPasswordEncoder.matches(loginInfo.getPassword(), byEmail.getPassword()) &&
                 sessionCaptcha.isCorrect(loginInfo.getCaptcha())) {

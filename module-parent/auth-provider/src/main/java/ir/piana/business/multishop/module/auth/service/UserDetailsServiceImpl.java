@@ -4,7 +4,9 @@ import ir.piana.business.multishop.common.data.cache.AppDataCache;
 import ir.piana.business.multishop.common.data.entity.SiteEntity;
 import ir.piana.business.multishop.common.data.repository.SiteRepository;
 import ir.piana.business.multishop.module.auth.data.entity.GoogleUserEntity;
+import ir.piana.business.multishop.module.auth.data.entity.UserRolesEntity;
 import ir.piana.business.multishop.module.auth.data.repository.GoogleUserRepository;
+import ir.piana.business.multishop.module.auth.data.repository.UserRolesRepository;
 import ir.piana.business.multishop.module.auth.model.UserModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -25,6 +27,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private GoogleUserRepository googleUserRepository;
 
     @Autowired
+    private UserRolesRepository userRolesRepository;
+    @Autowired
     private SiteRepository siteRepository;
 
     @Autowired
@@ -40,7 +44,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         String[] split = null;
         if(encodedUsername.contains(":")) {
             split = encodedUsername.split(":");
-            username = new String(Base64.getDecoder().decode(username = split[split.length - 1]));
+            username = new String(Base64.getDecoder().decode(username = split[split.length - 2]));
             if(split[0].equalsIgnoreCase("form")) {
                 isForm = true;
             } else {
@@ -50,7 +54,21 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         GoogleUserEntity googleUserEntity = googleUserRepository.findByEmail(username);
         if (googleUserEntity == null) {
-            throw new UsernameNotFoundException(encodedUsername);
+            String encode = passwordEncoder.encode(split[split.length - 1]);
+            googleUserEntity = GoogleUserEntity.builder()
+                    .email(username)
+                    .userId(username)
+                    .agentId(1)
+                    .password(encode)
+                    .formPassword(encode)
+                    .build();
+            googleUserRepository.save(googleUserEntity);
+            googleUserEntity = googleUserRepository.findByEmail(googleUserEntity.getEmail());
+            userRolesRepository.save(UserRolesEntity.builder()
+                    .userId(googleUserEntity.getId())
+                    .roleName("ROLE_USER")
+                    .build());
+//            throw new UsernameNotFoundException(encodedUsername);
         }
         List<GrantedAuthority> authorities = googleUserEntity.getUserRolesEntities().stream()
                 .map(e -> new SimpleGrantedAuthority(e.getRoleName())).collect(Collectors.toList());
